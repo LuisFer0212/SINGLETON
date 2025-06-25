@@ -1,0 +1,12 @@
+{
+  "autoSaveInterval": 10,
+  "backupEnabled": false,
+  "defaultCurrency": "USD",
+  "enableLogs": true,
+  "backupDirectory": "./backup",
+  "timeFormat": "AM/PM",
+  "language": "FR",
+  "theme": "dark",
+  "region": "LATAM",
+  "maxConnections": 5
+}

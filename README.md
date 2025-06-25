@@ -61,22 +61,6 @@ El archivo `config.json` contiene los siguientes parámetros:
 3. Agregue Java al PATH del sistema
 4. Verifique la instalación: `java -version`
 
-### macOS
-
-```bash
-# Usando Homebrew
-brew install --cask temurin
-
-# O descargue desde https://adoptium.net/
-```
-
-### Linux (Ubuntu/Debian)
-
-```bash
-sudo apt update
-sudo apt install openjdk-11-jdk
-```
-
 ## 🔧 Instalación y Compilación
 
 ### Opción 1: Compilación Manual (Recomendada para principiantes)
@@ -89,37 +73,6 @@ compile.bat
 
 # Ejecutar la aplicación
 run.bat
-```
-
-#### Linux/macOS
-
-```bash
-# Crear directorio de salida
-mkdir -p target/classes
-
-# Descargar json-simple
-mkdir -p lib
-wget -O lib/json-simple-1.1.1.jar https://repo1.maven.org/maven2/com/googlecode/json-simple/json-simple/1.1.1/json-simple-1.1.1.jar
-
-# Compilar
-javac -cp "lib/json-simple-1.1.1.jar" -d target/classes src/main/java/*.java
-
-# Ejecutar
-java -cp "target/classes:lib/json-simple-1.1.1.jar" Main
-```
-
-### Opción 2: Usando Maven (Para usuarios avanzados)
-
-#### 1. Instalar Maven
-
-- **Windows**: Descargue desde [maven.apache.org](https://maven.apache.org/download.cgi)
-- **macOS**: `brew install maven`
-- **Linux**: `sudo apt install maven`
-
-#### 2. Compilar el proyecto
-
-```bash
-mvn clean compile
 ```
 
 #### 3. Crear el JAR ejecutable
@@ -267,57 +220,6 @@ public class ConfigurationManager {
 }
 ```
 
-## 🐛 Solución de Problemas
 
-### Error: "Java no está instalado"
 
-- Instale Java 11 o superior desde [Eclipse Temurin](https://adoptium.net/)
-- Agregue Java al PATH del sistema
-- Reinicie la terminal después de la instalación
 
-### Error: "Archivo de configuración no encontrado"
-
-- El archivo `config.json` se creará automáticamente con valores por defecto
-- Verifique que el directorio tenga permisos de escritura
-
-### Error: "Error al parsear el archivo de configuración"
-
-- Verifique que el archivo `config.json` tenga formato JSON válido
-- Puede eliminar el archivo para que se regenere con valores por defecto
-
-### Error: "No se puede abrir la interfaz gráfica"
-
-- Verifique que su sistema tenga soporte para GUI
-- En sistemas headless, use solo las opciones de consola
-
-### Error: "No se pudo descargar json-simple-1.1.1.jar"
-
-- Descargue manualmente desde: https://repo1.maven.org/maven2/com/googlecode/json-simple/json-simple/1.1.1/
-- Coloque el archivo en la carpeta `lib/`
-
-## 📝 Dependencias
-
-- **json-simple 1.1.1**: Para manejo de archivos JSON
-- **Java Swing**: Para las interfaces gráficas (incluido en JDK)
-
-## 🤝 Contribuciones
-
-Para contribuir al proyecto:
-
-1. Fork el repositorio
-2. Cree una rama para su feature (`git checkout -b feature/nueva-funcionalidad`)
-3. Commit sus cambios (`git commit -am 'Agregar nueva funcionalidad'`)
-4. Push a la rama (`git push origin feature/nueva-funcionalidad`)
-5. Abra un Pull Request
-
-## 📄 Licencia
-
-Este proyecto está bajo la Licencia MIT. Vea el archivo `LICENSE` para más detalles.
-
-## 👨‍💻 Autor
-
-Desarrollado como proyecto educativo para demostrar la implementación del patrón Singleton en Java.
-
----
-
-**Nota**: Este proyecto es una implementación educativa del patrón Singleton. En aplicaciones de producción, considere usar frameworks de configuración más robustos como Spring Boot Configuration o Apache Commons Configuration.
